@@ -1,0 +1,20 @@
+#!/usr/bin/env groovy
+
+pipelineJob('maven-test') {
+    displayName('Testing Maven in Docker Build')
+
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/azerbe/jenkins-pipelines.git')
+                        credentials('jenkins-operator')
+                    }
+                    branches('*/master')
+                }
+            }
+            scriptPath('cicd/pipelines/build.jenkins')
+        }
+    }
+}
