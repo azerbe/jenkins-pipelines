@@ -25,6 +25,8 @@ spec:
       container('docker') {
         sh "docker build -t ${image} ."
       }
+      containerLog 'docker'
+      containerLog 'POD_LABEL'
     }
   }
 }
