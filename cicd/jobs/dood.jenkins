@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
-pipelineJob('DiD') {
-    displayName('Testing DockerInDocker Build (Socket)')
+pipelineJob('DooD') {
+    displayName('Testing DockerOutOfDocker Build (Socket)')
 
     definition {
         cpsScm {
@@ -14,7 +14,7 @@ pipelineJob('DiD') {
                     branches('*/master')
                 }
             }
-            scriptPath('cicd/pipelines/did.jenkins')
+            scriptPath('cicd/pipelines/dood.jenkins')
         }
     }
 }
